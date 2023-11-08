@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSI - UFOPA</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SISTEMAS DE INFORMAÇÃO</h1>
+    </header>
+    <section class="course-description">
+        <h2>Nós do CASI lhe damos boas vindas</h2>
+        <p1>
+            Olá, tudo bem aluno(a)?
+            Estamos aqui para lhe parabenizar por ter escolhido nosso curso e ajudar nessa nova etapa da sua vida.
+            Criamos esse site para que você fique por dentro 
+        </p1>
+    </section>
+    <section class="registration-form">
+        <h2>Faça parte da Comunidade BSI!</h2>
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="number">Matrícula:</label>
+            <input type="number" id="number" name="number" required>
+        
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$">
+            <small>A senha deve conter pelo menos 8 caracteres, incluindo números, letras maiúsculas, minúsculas e caracteres especiais (!@#$%^&*).</small>
+            <p></p>
+            <input type="submit" id="submit" value="Faça parte de BSI!">
+        </form>        
+    </section>
+    <p></p>
+<a href="casi.html">O que é o CASI?</a>
+
+    <section class="course-description">
+        <h2>Quem é o CASI?</h2>
+        <p1>
+            CASI é o Centro Acadêmico de Sistemas de Informação, criado em 2023
+            Estamos aqui para lhe parabenizar por ter escolhido nosso curso e ajudar nessa nova etapa da sua vida.
+            Criamos esse site para que você fique por dentro 
+        </p1>
+    </section> 
+    <script src="script.js"></script>
+</body>
+<script>
+   let name = document.getElementById('name')
+   let number = document.getElementById('number')
+   let email = document.getElementById('email')
+   let password = document.getElementById('password')
+const button =  document.getElementById('submit')
+button.addEventListener('click', () =>{
+
+    fetch({
+         url: 'http://localhost:3000/registrar',
+        method: 'POST',
+        body: JSON.stringify({ name: name.value, email: email.value, password: password.value, number: number.value})
+    })
+})
+
+</script>
+</html>
+

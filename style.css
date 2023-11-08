@@ -1,0 +1,101 @@
+body {
+    font-family: "Arial", sans-serif; 
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+        background-color: #751b9e;
+        font-family: "Blank River", sans-serif; 
+        font-size: 35px;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+}
+
+.course-description, .registration-form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+h2 {
+    font-family: "Jacksilver", sans-serif;
+    font-size: 24px; /* Tamanho de fonte desejado para h2 */
+    color: #ffff /* Cor do texto para h2 */
+}
+
+.p1 {
+    font-family: "Analogist", sans-serif;
+    font-size: 18px; /* Tamanho de fonte desejado para p1 */
+    color: #00ff00; /* Cor do texto para p1 */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+label, input {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    border: 1px solid #ccc; /* Adicione uma borda */
+    padding: 5px; /* Adicione preenchimento interno */
+    border-radius: 4px; /* Adicione bordas arredondadas */
+}
+
+input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+input[type="email"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+input[type="number"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+label {
+    font-weight: bold; /* Torna os rótulos em negrito */
+}
+
+input[type="submit"] {
+    background-color: #4500b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2c0352;
+}
+
+input:focus {
+    border: 1px solid #000000;
+    outline: none;
+}
+
+input:invalid {
+    border: 1px solid #4b204b;
+}
+
+small {
+    font-size: 9px;
+  }
+  
