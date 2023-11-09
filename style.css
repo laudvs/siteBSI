@@ -24,16 +24,15 @@ header {
 
 h2 {
     font-family: "Jacksilver", sans-serif;
-    font-size: 24px; /* Tamanho de fonte desejado para h2 */
-    color: #ffff /* Cor do texto para h2 */
+    font-size: 24px; 
+    color: #ffff 
 }
 
 .p1 {
     font-family: "Analogist", sans-serif;
-    font-size: 18px; /* Tamanho de fonte desejado para p1 */
-    color: #00ff00; /* Cor do texto para p1 */
+    font-size: 18px; 
+    color: #00ff00;
 }
-
 form {
     display: flex;
     flex-direction: column;
@@ -46,9 +45,9 @@ label, input {
 }
 
 input[type="text"] {
-    border: 1px solid #ccc; /* Adicione uma borda */
-    padding: 5px; /* Adicione preenchimento interno */
-    border-radius: 4px; /* Adicione bordas arredondadas */
+    border: 1px solid #ccc;
+    padding: 5px; 
+    border-radius: 4px;
 }
 
 input[type="password"] {
@@ -63,19 +62,20 @@ input[type="email"] {
     border-radius: 4px;
 }
 
-input[type="number"] {
+input[type="text"] {
     border: 1px solid #ccc;
     padding: 5px;
     border-radius: 4px;
 }
 
 label {
-    font-weight: bold; /* Torna os rótulos em negrito */
+    font-weight: bold; 
 }
 
 input[type="submit"] {
     background-color: #4500b3;
-    color: #fff;
+    font-family: "Blank River", sans-serif;
+    color: #ccc;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -98,4 +98,3 @@ input:invalid {
 small {
     font-size: 9px;
   }
-  

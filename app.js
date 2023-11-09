@@ -1,49 +1,37 @@
-const mysql = require('mysql2');
 const express = require('express');
 const bodyParser = require('body-parser');
+const { Pool } = require('pg');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Configurações de conexão com o banco de dados
-const connection = mysql.createConnection({
+// Configurações de conexão com o banco de dados PostgreSQL
+const pool = new Pool({
+  user: 'seu_usuario',
   host: 'localhost',
-  user: 'root',
-  password: 'YES',
-  database: 'casi_alunos',
+  database: 'seu_banco_de_dados',
+  password: 'sua_senha',
+  port: 5432, // Porta padrão do PostgreSQL
 });
 
 // Rota para lidar com o envio do formulário
 app.post('/registrar', (req, res) => {
   const { name, email, number, password } = req.body;
 
-  // Estabelecer a conexão com o banco de dados
-  connection.connect((err) => {
+  // Realizar uma inserção de exemplo
+  const query = 'INSERT INTO sua_tabela (name, email, number, password) VALUES ($1, $2, $3, $4)';
+  const values = [name, email, number, password];
+
+  // Usar o pool para executar a consulta
+  pool.query(query, values, (err, results) => {
     if (err) {
-      console.error('Erro ao conectar ao banco de dados:', err);
+      console.error('Erro na inserção:', err);
+      res.status(500).send('Erro ao inserir dados no banco de dados.');
       return;
     }
-    console.log('Conectado ao banco de dados MySQL.');
-
-    // Realizar uma inserção de exemplo
-    const query = 'INSERT INTO sua_tabela (name, email, number, password) VALUES (?, ?, ?, ?)';
-    connection.query(query, [name, email, number, password], (err, results) => {
-      if (err) {
-        console.error('Erro na inserção:', err);
-        return;
-      }
-      console.log('Dados inseridos com sucesso.');
-      res.send('Dados inseridos com sucesso!');
-    });
-
-    // Fechar a conexão com o banco de dados
-    connection.end((err) => {
-      if (err) {
-        console.error('Erro ao fechar a conexão:', err);
-      }
-      console.log('Conexão encerrada.');
-    });
+    console.log('Dados inseridos com sucesso.');
+    res.send('Dados inseridos com sucesso!');
   });
 });
 
