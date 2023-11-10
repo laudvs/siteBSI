@@ -8,9 +8,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configurações de conexão com o banco de dados PostgreSQL
 const pool = new Pool({
-  user: 'seu_usuario',
+  user: 'postgres',
   host: 'localhost',
-  database: 'seu_banco_de_dados',
+  database: 'alunos',
   password: 'sua_senha',
   port: 5432, // Porta padrão do PostgreSQL
 });
